@@ -1,0 +1,15 @@
+*.project
+*.settings
+*.classpath
+*.metadata
+*.iml
+*.idea
+*.checkstyle
+*.DS_Store
+*.swp
+node/
+node_modules/
+target/
+bin/
+atlassian-ide-plugin.xml
+*.sonar-ide.properties

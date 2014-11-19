@@ -1,0 +1,57 @@
+<!--
+/**
+ * Copyright (c) Codice Foundation
+ *
+ * This is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either
+ * version 3 of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details. A copy of the GNU Lesser General Public License is distributed along with this program and can be found at
+ * <http://www.gnu.org/licenses/lgpl.html>.
+ *
+ **/
+ -->
+<features name="${project.artifactId}-${project.version}">
+
+    <feature name="registry-core-api" install="manual" version="${project.version}"
+             description="API that contains the core registry interfaces.">
+        <bundle>mvn:ddf.registry.core/registry-core-api/${project.version}</bundle>
+    </feature>
+
+    <feature name="registry-core-service" install="manual" version="${project.version}"
+             description="Central registry service.">
+        <bundle>mvn:ddf.registry.core/registry-core-service/${project.version}</bundle>
+    </feature>
+
+    <!-- Registry REST Services -->
+    <feature name="registry-server-rest" install="manual" version="${project.version}"
+             description="RESTful endpoint for the registry service.">
+        <bundle>mvn:ddf.registry.server/registry-server-rest/${project.version}</bundle>
+    </feature>
+
+    <feature name="registry-client-rest" install="manual" version="${project.version}"
+             description="Client to communicate with a RESTful implementation of the registry.">
+        <bundle>mvn:ddf.registry.client/registry-client-rest/${project.version}</bundle>
+    </feature>
+
+    <!-- Registry mDNS Services -->
+    <feature name="registry-server-mdns" install="manual" version="${project.version}"
+             description="mDNS endpoint for the registry service.">
+        <bundle>mvn:ddf.registry.server/registry-server-mdns/${project.version}</bundle>
+    </feature>
+
+    <feature name="registry-client-mdns" install="manual" version="${project.version}"
+             description="Client to communicate with a mDNS implementation of the registry.">
+        <bundle>mvn:ddf.registry.client/registry-client-mdns/${project.version}</bundle>
+    </feature>
+
+
+    <feature name="registry-app" install="auto" version="${project.version}"
+             description="The Registry Application provides a way for DDF nodes to dynamically find and federate with each other.::DDF Registry">
+        <feature>registry-core-api</feature>
+        <feature>registry-core-service</feature>
+        <feature>registry-server-rest</feature>
+        <feature>registry-client-rest</feature>
+    </feature>
+
+</features>
