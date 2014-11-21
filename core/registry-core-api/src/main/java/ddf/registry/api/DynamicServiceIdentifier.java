@@ -14,27 +14,24 @@
  **/
 package ddf.registry.api;
 
-import java.util.Map;
-
 /**
- * Interface that external sources can implement to be able to be dynamically created by the registry.
+ * Allows dynamic services to register an association between their service type and factory identifier.
+ * This association is needed when generating services using configuration admin.
  */
-public interface DynamicExternalSource {
+public interface DynamicServiceIdentifier {
 
     /**
-     * The ID/Name of the Site
+     * Retrieves the factory identifier for this service.
+     *
+     * @return The factory PID that can be used to create new services instances.
      */
-    void setId(String id);
+    String getFactoryIdentifier();
 
     /**
-     * The endpoint URL for the site.
+     * Retrieves the corresponding service type for this service.
+     *
+     * @return Service type that defines this service.
      */
-    void setEndpointUrl(String url);
-
-    /**
-     * Basically contains any additional info outside of the URL and the ID that the source would need. This is the
-     * extensibility point for things like registerForEvents, subscriptionCriteria, etc
-     */
-    void setSourceProperties(Map<String, String> props);
+    String getServiceType();
 
 }

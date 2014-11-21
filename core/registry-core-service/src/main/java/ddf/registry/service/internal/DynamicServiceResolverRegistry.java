@@ -14,7 +14,7 @@
  **/
 package ddf.registry.service.internal;
 
-import ddf.registry.api.DynamicExternalSource;
+import ddf.registry.api.DynamicServiceIdentifier;
 import ddf.registry.api.DynamicServiceResolver;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -27,15 +27,15 @@ public class DynamicServiceResolverRegistry implements DynamicServiceResolver {
     private static final Logger LOGGER = LoggerFactory
             .getLogger(DynamicServiceResolverRegistry.class);
 
-    private List<DynamicExternalSource> sources;
+    private List<DynamicServiceIdentifier> identifiers;
 
-    public DynamicServiceResolverRegistry(List<DynamicExternalSource> sources) {
-        this.sources = sources;
+    public DynamicServiceResolverRegistry(List<DynamicServiceIdentifier> identifiers) {
+        this.identifiers = identifiers;
     }
 
     @Override
     public String getFactoryPid(String serviceType) {
-        for (DynamicExternalSource identifier : sources) {
+        for (DynamicServiceIdentifier identifier : identifiers) {
             if (StringUtils.equals(serviceType, identifier.getServiceType())) {
                 return identifier.getFactoryIdentifier();
             }
@@ -46,7 +46,7 @@ public class DynamicServiceResolverRegistry implements DynamicServiceResolver {
 
     @Override
     public String getServiceType(String factoryPid) {
-        for (DynamicExternalSource identifier : sources) {
+        for (DynamicServiceIdentifier identifier : identifiers) {
             if (StringUtils.equals(factoryPid, identifier.getFactoryIdentifier())) {
                 return identifier.getServiceType();
             }

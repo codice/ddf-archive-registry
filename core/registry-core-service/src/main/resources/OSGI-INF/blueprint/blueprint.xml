@@ -25,9 +25,9 @@
     <service ref="serviceRegistry" auto-export="interfaces" />
 
     <!-- Registry Service Resolver -->
-    <reference-list id="sourceList" interface="ddf.registry.api.DynamicExternalSource" availability="optional" />
+    <reference-list id="identifierList" interface="ddf.registry.api.DynamicServiceIdentifier" availability="optional" />
     <bean id="serviceResolver" class="ddf.registry.service.internal.DynamicServiceResolverRegistry">
-        <argument ref="sourceList" />
+        <argument ref="identifierList" />
     </bean>
 
     <service ref="serviceResolver" auto-export="interfaces" />
