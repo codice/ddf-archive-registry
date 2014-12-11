@@ -13,7 +13,7 @@
 <img src="https://tools.codice.org/wiki/download/attachments/3047458/ddf.jpg"/>
 # [Distributed Data Framework Catalog \(DDF-Registry\)](https://tools.codice.org/wiki/display/DDF/)
 [![Build Status](https://travis-ci.org/codice/ddf-registry.png?branch=master)](https://travis-ci.org/codice/ddf-registry)
-<img src="https://codeship.com/projects/9cd1d000-6398-0132-7958-32c060907738/status?branch=master"/>
+[![Codeship Status for codice/ddf-registry](https://codeship.com/projects/9cd1d000-6398-0132-7958-32c060907738/status?branch=master)](https://codeship.com/projects/52381)
 
 DDF-Registry is an open source app integrated with the DDF integration framework. 
 
