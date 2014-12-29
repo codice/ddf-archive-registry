@@ -23,7 +23,7 @@
 
     <groupId>ddf.registry</groupId>
     <artifactId>registry</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>DDF Registry</name>
     <packaging>pom</packaging>
 
@@ -55,8 +55,4 @@
             <url>http://artifacts.codice.org/content/groups/public/</url>
         </repository>
     </repositories>
-
-  <scm>
-    <tag>registry-0.1.0</tag>
-  </scm>
 </project>
